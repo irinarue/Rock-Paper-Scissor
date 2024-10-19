@@ -144,7 +144,6 @@ const resetGame = () => {
     pTwoChoice.innerHTML = "";
     pOne.style.border = "none";
     pTwo.style.border = "none";
-    gamemode.value = "two-players";
     pOneChoices.classList.add("hidden");
     pTwoChoices.classList.add("hidden");
     result.classList.add("hidden");
