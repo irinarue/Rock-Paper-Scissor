@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UFT-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Schere, Stein & Papier</title>
+    </head>
+    <body>
+        <header>
+            <h1>Rock, paper & scissors</h1>
+            <hr>
+            <h2>Rules: </h2>
+              <div class="hidden">
+                <p>Rock beats scissors, scissors beat paper, and paper beats rock. If the players choose the same, it is a draw. Whoever wins 3 times first wins the game.</p>
+                <p>Player 1 chooses first, then Player 2 or the computer.</p>
+             </div>
+        </header>
+        <main>            
+            <section id="game-head">
+                    <h3>Gamemode:</h3>
+                    <select name="gamemode" id="gamemode">
+                        <option value="two-players" selected>Two players</option>
+                        <option value="computer">Computer</option>
+                    </select>
+                    <button id="start-btn" type="button" onclick="startGame()">Start</button>
+                    <button id="reset-btn" type="button" onclick="resetGame()">Reset</button>               
+            </section>
+            <section id="game-body">
+                <div id="player-one" class="player">
+                    <table class="options">
+                        <thead>
+                            <tr><th id="player-one-name">Player 1</th></tr>
+                            <tr><th>Score: <span id="score-player-one">0</span></th></tr>
+                        </thead>
+                        <tbody class="hidden">
+                            <tr><td onclick='pOneChooseOption("rock")'><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296854_640.png" alt="rock"></td></tr>
+                            <tr><td onclick='pOneChooseOption("paper")'><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296855_1280.png" alt="paper"></td></tr>
+                            <tr><td onclick='pOneChooseOption("scissor")'><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296853_1280.png" alt="scissors"></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="playground">
+                    <table>
+                        <thead><tr><th colspan="2">Rock, paper, scissors,<br> SHOOT !</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td><span id="choice-player-one" class="hidden">one</span></td>
+                                <td><span id="choice-player-two" class="hidden">two</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="player-two" class="player">
+                     <table class="options">
+                        <thead>
+                                <tr><th id="player-two-name">Player 2</th></tr>
+                                <tr><th>Score: <span id="score-player-two">0</span></th></tr>
+                        </thead>
+                        <tbody class="hidden">
+                            <tr onclick= 'pTwoChooseOption("rock")'><td><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296854_640.png" alt="rock"></td></tr>
+                            <tr onclick= 'pTwoChooseOption("paper")'><td><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296855_1280.png" alt="paper"></td></tr>
+                            <tr onclick= 'pTwoChooseOption("scissor")'><td><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296853_1280.png" alt="scissors"></td></tr>
+                      </tbody>
+                    </table>
+                </div>            
+            </section>
+            <div id="result" class="hidden"><p></p><button>Next Round</button></div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
